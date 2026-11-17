@@ -1,0 +1,22 @@
+<svg xmlns="http://w3.org" viewBox="0 0 250 350" width="250" height="350">
+  <defs>
+    <!-- Diagonal Hatch Pattern for Card Back -->
+    <pattern id="cardPattern" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="6" height="12" fill="#1e3a8a" />
+      <rect x="6" width="6" height="12" fill="#2563eb" />
+    </pattern>
+  </defs>
+
+  <!-- Outer Card Base -->
+  <rect x="2" y="2" width="246" height="346" rx="16" ry="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="3" />
+
+  <!-- Inner Patterned Area -->
+  <rect x="16" y="16" width="218" height="318" rx="10" ry="10" fill="url(#cardPattern)" />
+
+  <!-- Decorative Inner Border -->
+  <rect x="22" y="22" width="206" height="306" rx="6" ry="6" fill="none" stroke="#93c5fd" stroke-width="2" stroke-dasharray="6,4" />
+
+  <!-- Center Emblem -->
+  <circle cx="125" cy="175" r="36" fill="#ffffff" stroke="#1e3a8a" stroke-width="3" />
+  <polygon points="125,148 145,175 125,202 105,175" fill="#2563eb" />
+</svg>
