@@ -6,9 +6,26 @@
   <title>castle-the card game</title>
 </head>
 <body>
-<img src = "https://raw.githubusercontent.com/shemayak/castle/refs/heads/main/cards-svg/card-back.svg" alt = "card"  width = "100">
+<!--the next links are the link fro the back card img-->
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/card-back.svg" alt = "card"  id ="OC1" width = "100">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/card-back.svg" alt = "card"  id ="OC2" width = "100">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/card-back.svg" alt = "card"  id ="OC3" width = "100">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/card-back.svg" alt = "card"  id ="OC4" width = "100">
 <style>
 
 </style>
+<script>
+function card(cardName = "card-back"){
+  return `https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/${cardName}.svg`;
+}
+const OC1 = document.querySelector("#OC1"); 
+const OC2 = document.querySelector("#OC2"); 
+const OC3 = document.querySelector("#OC3"); 
+const OC4 = document.querySelector("#OC4"); 
+OC1.src = card();
+OC2.src = card();
+OC3.src = card();
+OC4.src = card();
+</script>
 </body>
 </html>
