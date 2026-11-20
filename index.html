@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,8 @@
 </div>
 <div id = "separator">
 </div>
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/card-back.svg" alt = "card"  class = "OC">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/card-back.svg" alt = "card" id= "discardPile">
+
 <style>
  #allOC{
   overflow-x: auto;
@@ -26,6 +28,13 @@
 }
 #separator {
     height: 25vh;
+}
+#discardPile {
+    
+    width: 12.5vw;
+    position: absolute;
+    left: calc(50vw - (12.5vw / 2));
+    
 }
 
 </style>
