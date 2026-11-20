@@ -14,25 +14,34 @@
 <img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/card-back.svg" alt = "card"  id ="OC3" class = " OC">
 <img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/card-back.svg" alt = "card"  id ="OC4" class = " OC">
 </div>
-<div id = "separator">
-</div>
+
 <img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/card-back.svg" alt = "card" id= "discardPile">
 
+<div id = "allYC">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/card-back.svg" alt = "card"  id ="YC1" class = "YC">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/card-back.svg" alt = "card"  id ="YC2" class = "YC">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/card-back.svg" alt = "card"  id ="YC3" class = "YC">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/card-back.svg" alt = "card"  id ="YC4" class = "YC">
+</div>
 <style>
- #allOC{
+ #allOC ,#allYC{
   overflow-x: auto;
   white-space: nowrap;
 }
-.OC {
-  width :12.5vw;  
+.OC, .YC{
+  width :12.5vw;
 }
-#separator {
-    height: 25vh;
+#allYC{
+    position: absolute;
+    top: 90vh;
 }
+
+
 #discardPile {
     
     width: 12.5vw;
     position: absolute;
+    top: 50vh;
     left: calc(50vw - (12.5vw / 2));
     
 }
