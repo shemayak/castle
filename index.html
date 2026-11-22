@@ -26,6 +26,9 @@
     </div>
     <div id = "YhandC">
        <img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card" id = "YHC1" class ="YHC">
+       <img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card" id = "YHC2" class ="YHC">
+       <img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card" id = "YHC3" class ="YHC">
+       <img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card" id = "YHC4" class ="YHC">
     </div>
 </div>
 <style>
@@ -35,7 +38,7 @@
 }
 .OFC, .YFC ,#discardPile , .YHC{
   width :12.5vw;
-  max-height: 20vh;
+  max-height: 17vh;
 }
 #allYC{
     position: absolute;
@@ -78,35 +81,35 @@ let allCardsNames = [
 let value = [// the vlaues/ how good  of the cards the more vlaue lower index
 "Joker","10","7","2","A","K","Q","J",
 "9","8","6","5","4","3","2","1"];
-
-
-
 allCardsNames = shuffle(allCardsNames);// mix deck 
 console.log(allCardsNames);
 let OHandCards = [];// oponents hand cards 
 for(let i = 0; i < 8; i++){
-   OHandCards[i] = allCardsNames[i];// oponent picking from deck
+   OHandCards[i] = allCardsNames.shift();// oponent picking from deck
     
 }
 
-OFC1.src = card(OHandCards[0]);// placing for botoms 
-OFC2.src = card(OHandCards[1]);
-OFC3.src = card(OHandCards[2]);
-OFC4.src = card(OHandCards[3]);
+OFC1.src = card(OHandCards.shift());// placing for botoms 
+OFC2.src = card(OHandCards.shift());
+OFC3.src = card(OHandCards.shift());
+OFC4.src = card(OHandCards.shift());
 
 
 let YHandCards = [];// your hand card 
 for(let i = 0; i < 8; i++){
-   YHandCards[i] = allCardsNames[i];
+   YHandCards[i] = allCardsNames.shift();
     
 }
 
-YFC1.src = card(OHandCards[0]);
-YFC2.src = card(OHandCards[1]);
-YFC3.src = card(OHandCards[2]);
-YFC4.src = card(OHandCards[3]);
+YFC1.src = card(YHandCards.shift());
+YFC2.src = card(YHandCards.shift());
+YFC3.src = card(YHandCards.shift());
+YFC4.src = card(YHandCards.shift());
 
-YHC1.src = card(OHandCards[4]);
+YHC1.src = card(YHandCards.shift());
+YHC2.src = card(YHandCards.shift());
+YHC3.src = card(YHandCards.shift());
+YHC4.src = card(YHandCards.shift());
 
 </script>
 </body>
