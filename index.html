@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,56 +8,74 @@
 <body>
 <!--the next links are the link fro the back card img-->
 <div id = "allOC">
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/_card-back.svg" alt = "card"  id ="OC1" class = " OC">
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/_card-back.svg" alt = "card"  id ="OC2" class = " OC">
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/_card-back.svg" alt = "card"  id ="OC3" class = " OC">
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/_card-back.svg" alt = "card"  id ="OC4" class = " OC">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card"  id ="OFC1" class = " OFC">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card"  id ="OFC2" class = " OFC">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card"  id ="OFC3" class = " OFC">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card"  id ="OFC4" class = " OFC">
 </div>
 
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/_card-back.svg" alt = "card" id= "discardPile">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card" id= "discardPile">
+
 
 <div id = "allYC">
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/_card-back.svg" alt = "card"  id ="YC1" class = "YC">
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/_card-back.svg" alt = "card"  id ="YC2" class = "YC">
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/_card-back.svg" alt = "card"  id ="YC3" class = "YC">
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/cards-svg/_card-back.svg" alt = "card"  id ="YC4" class = "YC">
+    <div id = "YfloorC">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card"  id ="YFC1" class = "YFC">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card"  id ="YFC2" class = "YFC">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card"  id ="YFC3" class = "YFC">
+<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card"  id ="YFC4" class = "YFC">
+    </div>
+    <div id = "YhandC">
+       <img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card" id = "YHC1" class ="YHC">
+    </div>
 </div>
 <style>
  #allOC ,#allYC{
   overflow-x: auto;
   white-space: nowrap;
 }
-.OC, .YC{
+.OFC, .YFC ,#discardPile , .YHC{
   width :12.5vw;
+  max-height: 20vh;
 }
 #allYC{
     position: absolute;
-    top: 90vh;
+    bottom: 5vh;
 }
 
 
 #discardPile {
-    
-    width: 12.5vw;
+
     position: absolute;
-    top: 50vh;
+    top: 30vh;
     left: calc(50vw - (12.5vw / 2));
     
 }
 
 </style>
-<script>
+<script type="module" >
+import shuffle from 'https://esm.sh/lodash.shuffle';
 function card(cardName = "card-back"){
   return `https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/${cardName}.svg`;
 }
-const OC1 = document.querySelector("#OC1"); 
-const OC2 = document.querySelector("#OC2"); 
-const OC3 = document.querySelector("#OC3"); 
-const OC4 = document.querySelector("#OC4"); 
-OC1.src = card();
-OC2.src = card();
-OC3.src = card();
-OC4.src = card();
+const OC1 = document.querySelector("#OFC1"); 
+const OC2 = document.querySelector("#OFC2"); 
+const OC3 = document.querySelector("#OFC3"); 
+const OC4 = document.querySelector("#OFC4"); 
+
+let allCardsNames = [
+    "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "10H", "JH", "QH", "KH", "AH", 
+    "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "10S", "JS", "QS", "KS", "AS", 
+    "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "10C", "JC", "QC", "KC", "AC", 
+    "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "10D", "JD", "QD", "KD", "AD",
+    "Joker1", "Joker2"
+    ];
+    
+allCardsNames = shuffle(allCardsNames);
+console.log(allCardsNames);
+OC1.src = card(allCardsNames[0]);
+OC2.src = card(allCardsNames[1]);
+OC3.src = card(allCardsNames[2]);
+OC4.src = card(allCardsNames[3]);
 </script>
 </body>
 </html>
