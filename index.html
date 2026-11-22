@@ -57,11 +57,17 @@ import shuffle from 'https://esm.sh/lodash.shuffle';
 function card(cardName = "card-back"){
   return `https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/${cardName}.svg`;
 }
-const OC1 = document.querySelector("#OFC1"); 
-const OC2 = document.querySelector("#OFC2"); 
-const OC3 = document.querySelector("#OFC3"); 
-const OC4 = document.querySelector("#OFC4"); 
+const OFC1 = document.querySelector("#OFC1"); // capital O is oponent Y for yours ,F for floor ,
+const OFC2 = document.querySelector("#OFC2"); // and C for card 
+const OFC3 = document.querySelector("#OFC3"); 
+const OFC4 = document.querySelector("#OFC4"); 
 
+const YFC1 = document.querySelector("#YFC1"); 
+const YFC2 = document.querySelector("#YFC2"); 
+const YFC3 = document.querySelector("#YFC3"); 
+const YFC4 = document.querySelector("#YFC4");
+  
+const YHC1 = document.querySelector("#YHC1"); 
 let allCardsNames = [
     "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "10H", "JH", "QH", "KH", "AH", 
     "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "10S", "JS", "QS", "KS", "AS", 
@@ -69,13 +75,39 @@ let allCardsNames = [
     "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "10D", "JD", "QD", "KD", "AD",
     "Joker1", "Joker2"
     ];
-    
-allCardsNames = shuffle(allCardsNames);
+let value = [// the vlaues/ how good  of the cards the more vlaue lower index
+"Joker","10","7","2","A","K","Q","J",
+"9","8","6","5","4","3","2","1"];
+
+
+
+allCardsNames = shuffle(allCardsNames);// mix deck 
 console.log(allCardsNames);
-OC1.src = card(allCardsNames[0]);
-OC2.src = card(allCardsNames[1]);
-OC3.src = card(allCardsNames[2]);
-OC4.src = card(allCardsNames[3]);
+let OHandCards = [];// oponents hand cards 
+for(let i = 0; i < 8; i++){
+   OHandCards[i] = allCardsNames[i];// oponent picking from deck
+    
+}
+
+OFC1.src = card(OHandCards[0]);// placing for botoms 
+OFC2.src = card(OHandCards[1]);
+OFC3.src = card(OHandCards[2]);
+OFC4.src = card(OHandCards[3]);
+
+
+let YHandCards = [];// your hand card 
+for(let i = 0; i < 8; i++){
+   YHandCards[i] = allCardsNames[i];
+    
+}
+
+YFC1.src = card(OHandCards[0]);
+YFC2.src = card(OHandCards[1]);
+YFC3.src = card(OHandCards[2]);
+YFC4.src = card(OHandCards[3]);
+
+YHC1.src = card(OHandCards[4]);
+
 </script>
 </body>
 </html>
