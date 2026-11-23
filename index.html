@@ -71,7 +71,7 @@ const YFC3 = document.querySelector("#YFC3");
 const YFC4 = document.querySelector("#YFC4");
   
 const YHC1 = document.querySelector("#YHC1"); 
-let allCardsNames = [
+let deck = [
     "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "10H", "JH", "QH", "KH", "AH", 
     "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "10S", "JS", "QS", "KS", "AS", 
     "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "10C", "JC", "QC", "KC", "AC", 
@@ -80,15 +80,26 @@ let allCardsNames = [
     ];
 let value = [// the vlaues/ how good  of the cards the more vlaue lower index
 "Joker","10","7","2","A","K","Q","J",
-"9","8","6","5","4","3","2","1"];
-allCardsNames = shuffle(allCardsNames);// mix deck 
-console.log(allCardsNames);
+"9","8","6","5","4","3"];
+deck = shuffle(deck);// mix deck 
+console.log(deck);
 let OHandCards = [];// oponents hand cards 
+let Obottoms = [];
 for(let i = 0; i < 8; i++){
-   OHandCards[i] = allCardsNames.shift();// oponent picking from deck
+   OHandCards[i] = deck.shift();// oponent picking from deck
     
 }
-
+for(let i  = 0;i < 4;i++){
+    Obottoms[i] = deck.shift();// oponent picking from deck
+}
+for (let i = 0;i < OHandCards.length; i++){//ai chossing best cards 
+    let bestCard = [14,14,14,14];// value of 3, the lowset card worth
+    console.log(OHandCards.length);
+    if(value.indexOf(OHandCards[i]) < bestCard[0]){
+     bestCard[0] = OHandCards[0];
+     console.log(bestCard[0])
+    }
+}
 OFC1.src = card(OHandCards.shift());// placing for botoms 
 OFC2.src = card(OHandCards.shift());
 OFC3.src = card(OHandCards.shift());
@@ -96,11 +107,14 @@ OFC4.src = card(OHandCards.shift());
 
 
 let YHandCards = [];// your hand card 
+let Ybottoms = [];
 for(let i = 0; i < 8; i++){
-   YHandCards[i] = allCardsNames.shift();
+   YHandCards[i] = deck.shift();
     
 }
-
+for(let i  = 0;i < 4;i++){
+    Ybottoms[i] = deck.shift();// oponent picking from deck
+}
 YFC1.src = card(YHandCards.shift());
 YFC2.src = card(YHandCards.shift());
 YFC3.src = card(YHandCards.shift());
