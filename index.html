@@ -1,134 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>castle-the card game</title>
-</head>
-<body>
-<!--the next links are the link fro the back card img-->
-<div id = "allOC">
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card"  id ="OFC1" class = " OFC">
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card"  id ="OFC2" class = " OFC">
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card"  id ="OFC3" class = " OFC">
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card"  id ="OFC4" class = " OFC">
-</div>
 
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card" id= "discardPile">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>castle-the card game</title>
+  </head>
 
-
-<div id = "allYC">
-    <div id = "YfloorC">
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card"  id ="YFC1" class = "YFC">
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card"  id ="YFC2" class = "YFC">
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card"  id ="YFC3" class = "YFC">
-<img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card"  id ="YFC4" class = "YFC">
+  <body>
+    <!--the next links are the link fro the back card img-->
+    <div id="allOC">
+      <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="OFC1" class=" OFC">
+      <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="OFC2" class=" OFC">
+      <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="OFC3" class=" OFC">
+      <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="OFC4" class=" OFC">
     </div>
-    <div id = "YhandC">
-       <img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card" id = "YHC1" class ="YHC">
-       <img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card" id = "YHC2" class ="YHC">
-       <img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card" id = "YHC3" class ="YHC">
-       <img src = "https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt = "card" id = "YHC4" class ="YHC">
+
+    <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="discardPile">
+
+    <div id="allYC">
+      <div id="YfloorC">
+        <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="YFC1" class="YFC">
+        <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="YFC2" class="YFC">
+        <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="YFC3" class="YFC">
+        <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="YFC4" class="YFC">
+      </div>
+      <div id="YhandC">
+        <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="YHC1" class="YHC">
+        <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="YHC2" class="YHC">
+        <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="YHC3" class="YHC">
+        <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="YHC4" class="YHC">
+      </div>
     </div>
-</div>
-<style>
- #allOC ,#allYC{
-  overflow-x: auto;
-  white-space: nowrap;
-}
-.OFC, .YFC ,#discardPile , .YHC{
-  width :12.5vw;
-  max-height: 17vh;
-}
-#allYC{
-    position: absolute;
-    bottom: 5vh;
-}
+    <style>
+      #allOC,
+      #allYC {
+        overflow-x: auto;
+        white-space: nowrap;
+      }
 
+      .OFC,
+      .YFC,
+      #discardPile,
+      .YHC {
+        width: 12.5vw;
+        max-height: 17vh;
+      }
 
-#discardPile {
+      #allYC {
+        position: absolute;
+        bottom: 5vh;
+      }
 
-    position: absolute;
-    top: 30vh;
-    left: calc(50vw - (12.5vw / 2));
-    
-}
+      #discardPile {
+        position: absolute;
+        top: 30vh;
+        left: calc(50vw - (12.5vw / 2));
+      }
+    </style>
+    <script type="module">
+      import shuffle from 'https://esm.sh/lodash.shuffle';
 
-</style>
-<script type="module" >
-import shuffle from 'https://esm.sh/lodash.shuffle';
-function card(cardName = "card-back"){
-  return `https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/${cardName}.svg`;
-}
-const OFC1 = document.querySelector("#OFC1"); // capital O is oponent Y for yours ,F for floor ,
-const OFC2 = document.querySelector("#OFC2"); // and C for card 
-const OFC3 = document.querySelector("#OFC3"); 
-const OFC4 = document.querySelector("#OFC4"); 
+      function card(cardName = "card-back") {
+        return `https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/${cardName}.svg`;
+      }
+      const OFC1 = document.querySelector("#OFC1"); // capital O is oponent Y for yours ,F for floor ,
+      const OFC2 = document.querySelector("#OFC2"); // and C for card 
+      const OFC3 = document.querySelector("#OFC3");
+      const OFC4 = document.querySelector("#OFC4");
+      const YFC1 = document.querySelector("#YFC1");
+      const YFC2 = document.querySelector("#YFC2");
+      const YFC3 = document.querySelector("#YFC3");
+      const YFC4 = document.querySelector("#YFC4");
+      const YHC1 = document.querySelector("#YHC1");
+      let deck = [
+        "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "10H", "JH", "QH", "KH", "AH",
+        "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "10S", "JS", "QS", "KS", "AS",
+        "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "10C", "JC", "QC", "KC", "AC",
+        "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "10D", "JD", "QD", "KD", "AD",
+        "Joker1", "Joker2"
+      ];
+      let value = [ // the vlaues/ how good  of the cards the more vlaue lower index
+        "Joker", "10", "7", "2", "A", "K", "Q", "J",
+        "9", "8", "6", "5", "4", "3"
+      ];
+      deck = shuffle(deck); // mix deck 
+      console.log(deck);
+      let OHandCards = []; // oponents hand cards 
+      let Obottoms = [];
+      for (let i = 0; i < 8; i++) {
+        OHandCards[i] = deck.shift(); // oponent picking from deck
+      }
+      console.log(OHandCards);
+      let bestCard = [OHandCards[0], OHandCards[1],
+        OHandCards[2], OHandCards[3]
+      ]; // value of 3, the lowset card worth
+      for (let i = 0; i < 4; i++) {
+        Obottoms[i] = deck.shift(); // oponent picking from deck
+      }
+     /* 
+     for (let i = 0; i < 32;) { ai chossing best cards 
+        console.log(bestCard);
+        if (value.indexOf(OHandCards[Math.floor(i / 4)].slice(0, -1)) <=// place the better cards
+          value.indexOf(bestCard[i % 4].slice(0, -1))) {// and if worth more or = replace
+          bestCard[i % 4] = OHandCards[Math.floor(i / 4)];
+          //console.log("yes");
+          
+          i = (Math.floor((i / 4) * 4) + 4);
+        }
+        else{
+            i++;
+        }
+        
+      }
+      */
+      
+      OFC1.src = card(bestCard.shift()); // placing for botoms 
+      OFC2.src = card(bestCard.shift());
+      OFC3.src = card(bestCard.shift());
+      OFC4.src = card(bestCard.shift());
+      let YHandCards = []; // your hand card 
+      let Ybottoms = [];
+      for (let i = 0; i < 8; i++) {
+        YHandCards[i] = deck.shift();
+      }
+      for (let i = 0; i < 4; i++) {
+        Ybottoms[i] = deck.shift(); // oponent picking from deck
+      }
+      YFC1.src = card(YHandCards.shift());
+      YFC2.src = card(YHandCards.shift());
+      YFC3.src = card(YHandCards.shift());
+      YFC4.src = card(YHandCards.shift());
+      YHC1.src = card(YHandCards.shift());
+      YHC2.src = card(YHandCards.shift());
+      YHC3.src = card(YHandCards.shift());
+      YHC4.src = card(YHandCards.shift());
+    </script>
+  </body>
 
-const YFC1 = document.querySelector("#YFC1"); 
-const YFC2 = document.querySelector("#YFC2"); 
-const YFC3 = document.querySelector("#YFC3"); 
-const YFC4 = document.querySelector("#YFC4");
-  
-const YHC1 = document.querySelector("#YHC1"); 
-let deck = [
-    "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "10H", "JH", "QH", "KH", "AH", 
-    "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "10S", "JS", "QS", "KS", "AS", 
-    "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "10C", "JC", "QC", "KC", "AC", 
-    "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "10D", "JD", "QD", "KD", "AD",
-    "Joker1", "Joker2"
-    ];
-let value = [// the vlaues/ how good  of the cards the more vlaue lower index
-"Joker","10","7","2","A","K","Q","J",
-"9","8","6","5","4","3"];
-deck = shuffle(deck);// mix deck 
-console.log(deck);
-let OHandCards = [];// oponents hand cards 
-let Obottoms = [];
-for(let i = 0; i < 8; i++){
-   OHandCards[i] = deck.shift();// oponent picking from deck
-    
-}
-let bestCard = [OHandCards[0],OHandCards[1],
-    OHandCards[2],OHandCards[3]];// value of 3, the lowset card worth
-for(let i  = 0;i < 4;i++){
-    Obottoms[i] = deck.shift();// oponent picking from deck
-}
-for (let i = 0;i < 32; i++){//ai chossing best cards 
-    let cardNum = 0;
-    console.log(bestCard);
-    if(value.indexOf(OHandCards[Math.floor(i / 8)].slice(0,-1)) 
-       < value.indexOf(bestCard[i%4].slice(0,-1))){
-     bestCard[i%4] = OHandCards[Math.floor(i / 8)];
-     //console.log("yes");
-     i = Math.floor((i / 8 ) + 9);
-    }
-}
-OFC1.src = card(bestCard.shift());// placing for botoms 
-OFC2.src = card(bestCard.shift());
-OFC3.src = card(bestCard.shift());
-OFC4.src = card(bestCard.shift());
-
-
-let YHandCards = [];// your hand card 
-let Ybottoms = [];
-for(let i = 0; i < 8; i++){
-   YHandCards[i] = deck.shift();
-    
-}
-for(let i  = 0;i < 4;i++){
-    Ybottoms[i] = deck.shift();// oponent picking from deck
-}
-YFC1.src = card(YHandCards.shift());
-YFC2.src = card(YHandCards.shift());
-YFC3.src = card(YHandCards.shift());
-YFC4.src = card(YHandCards.shift());
-
-YHC1.src = card(YHandCards.shift());
-YHC2.src = card(YHandCards.shift());
-YHC3.src = card(YHandCards.shift());
-YHC4.src = card(YHandCards.shift());
-
-</script>
-</body>
 </html>
