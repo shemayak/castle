@@ -89,21 +89,25 @@ for(let i = 0; i < 8; i++){
    OHandCards[i] = deck.shift();// oponent picking from deck
     
 }
+let bestCard = [OHandCards[0],OHandCards[1],
+    OHandCards[2],OHandCards[3]];// value of 3, the lowset card worth
 for(let i  = 0;i < 4;i++){
     Obottoms[i] = deck.shift();// oponent picking from deck
 }
-for (let i = 0;i < OHandCards.length; i++){//ai chossing best cards 
-    let bestCard = [14,14,14,14];// value of 3, the lowset card worth
-    console.log(OHandCards.length);
-    if(value.indexOf(OHandCards[i]) < bestCard[0]){
-     bestCard[0] = OHandCards[0];
-     console.log(bestCard[0])
+for (let i = 0;i < 32; i++){//ai chossing best cards 
+    let cardNum = 0;
+    console.log(bestCard);
+    if(value.indexOf(OHandCards[Math.floor(i / 8)].slice(0,-1)) 
+       < value.indexOf(bestCard[i%4].slice(0,-1))){
+     bestCard[i%4] = OHandCards[Math.floor(i / 8)];
+     //console.log("yes");
+     i = Math.floor((i / 8 ) + 9);
     }
 }
-OFC1.src = card(OHandCards.shift());// placing for botoms 
-OFC2.src = card(OHandCards.shift());
-OFC3.src = card(OHandCards.shift());
-OFC4.src = card(OHandCards.shift());
+OFC1.src = card(bestCard.shift());// placing for botoms 
+OFC2.src = card(bestCard.shift());
+OFC3.src = card(bestCard.shift());
+OFC4.src = card(bestCard.shift());
 
 
 let YHandCards = [];// your hand card 
