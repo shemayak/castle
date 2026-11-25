@@ -92,9 +92,6 @@
         OHandCards[i] = deck.shift(); // oponent picking from deck
       }
       console.log(OHandCards);
-      let bestCard = [OHandCards[0], OHandCards[1],
-        OHandCards[2], OHandCards[3]
-      ]; // value of 3, the lowset card worth
       for (let i = 0; i < 4; i++) {
         Obottoms[i] = deck.shift(); // oponent picking from deck
       }
@@ -126,11 +123,13 @@
               i++;
           }
       }
-      
-      OFC1.src = card(bestCard.shift()); // placing for botoms 
-      OFC2.src = card(bestCard.shift());
-      OFC3.src = card(bestCard.shift());
-      OFC4.src = card(bestCard.shift());
+let bestCard = [OHandCards.shift(), OHandCards.shift(),
+        OHandCards.shift(), OHandCards.shift()
+      ];
+      OFC1.src = card(bestCard[0]); // placing for botoms 
+      OFC2.src = card(bestCard[1]);
+      OFC3.src = card(bestCard[2]);
+      OFC4.src = card(bestCard[3]);
       let YHandCards = []; // your hand card 
       let Ybottoms = [];
       for (let i = 0; i < 8; i++) {
