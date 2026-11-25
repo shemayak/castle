@@ -114,6 +114,18 @@
         
       }
       */
+      for(let i = 0;i < 16;){
+          if(value.indexOf(OHandCards[Math.floor(i/4) + 4].slice(0,-1)) // divde by 4 and add r so every 4 iratTions checks4,5,6,7 card (0indexed)
+             < value.indexOf(OHandCards[i % 4].slice(0,-1))
+          ){
+               OHandCards.unshift(OHandCards.splice(Math.floor(i/4) + 4,1)[0]);
+             i = 0;
+              console.log(OHandCards);
+          }
+          else{
+              i++;
+          }
+      }
       
       OFC1.src = card(bestCard.shift()); // placing for botoms 
       OFC2.src = card(bestCard.shift());
