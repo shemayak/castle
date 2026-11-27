@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en"> 
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>castle-the card game</title>
   </head>
-
   <body>
     <!--the next links are the link fro the back card img-->
     <div id="allOC">
@@ -15,9 +13,7 @@
       <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="OFC3" class=" OFC">
       <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="OFC4" class=" OFC">
     </div>
-
     <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="discardPile">
-
     <div id="allYC">
       <div id="YfloorC">
         <img src="https://cdn.jsdelivr.net/gh/shemayak/castle@refs/heads/main/_cards-svg/card-back.svg" alt="card" id="YFC1" class="YFC">
@@ -44,7 +40,7 @@
       #discardPile,
       .YHC {
         width: 12.5vw;
-        max-height: 17vh;
+        max-height: 15vh;
       }
 
       #allYC {
@@ -73,16 +69,16 @@
       const YFC3 = document.querySelector("#YFC3");
       const YFC4 = document.querySelector("#YFC4");
       const YHC1 = document.querySelector("#YHC1");
-      let deck = [
-        "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "10H", "JH", "QH", "KH", "AH",
-        "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "10S", "JS", "QS", "KS", "AS",
-        "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "10C", "JC", "QC", "KC", "AC",
-        "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "10D", "JD", "QD", "KD", "AD",
-        "Joker1", "Joker2"
-      ];
+      const YHC2 = document.querySelector("#YHC2");
+      const YHC3 = document.querySelector("#YHC3");
+      const YHC4 = document.querySelector("#YHC4");
+      const YC = document.querySelectorAll(".YHC, .YFC");
+
+
+
+      let deck = ["2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "10H", "JH", "QH", "KH", "AH", "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "10S", "JS", "QS", "KS", "AS", "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "10C", "JC", "QC", "KC", "AC", "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "10D", "JD", "QD", "KD", "AD", "Joker1", "Joker2"];
       let value = [ // the vlaues/ how good  of the cards the more vlaue lower index
-        "Joker", "10", "7", "2", "A", "K", "Q", "J",
-        "9", "8", "6", "5", "4", "3"
+        "Joker", "10", "7", "2", "A", "K", "Q", "J", "9", "8", "6", "5", "4", "3"
       ];
       deck = shuffle(deck); // mix deck 
       console.log(deck);
@@ -95,22 +91,7 @@
       for (let i = 0; i < 4; i++) {
         Obottoms[i] = deck.shift(); // oponent picking from deck
       }
-     /* 
-     for (let i = 0; i < 32;) { ai chossing best cards 
-        console.log(bestCard);
-        if (value.indexOf(OHandCards[Math.floor(i / 4)].slice(0, -1)) <=// place the better cards
-          value.indexOf(bestCard[i % 4].slice(0, -1))) {// and if worth more or = replace
-          bestCard[i % 4] = OHandCards[Math.floor(i / 4)];
-          //console.log("yes");
-          
-          i = (Math.floor((i / 4) * 4) + 4);
-        }
-        else{
-            i++;
-        }
-        
-      }
-      */
+      /* 
       for(let i = 0;i < 16;){
           if(value.indexOf(OHandCards[Math.floor(i/4) + 4].slice(0,-1)) // divde by 4 and add r so every 4 iratTions checks4,5,6,7 card (0indexed)
              < value.indexOf(OHandCards[i % 4].slice(0,-1))
@@ -123,7 +104,19 @@
               i++;
           }
       }
-let bestCard = [OHandCards.shift(), OHandCards.shift(),
+      */
+      for (let checkingCard = 0; checkingCard < 8; checkingCard++) { // the card im seeeing should be placed b/f the target card
+        for (let targetCard = 0; targetCard < checkingCard; targetCard++) { //the card. that im making sure isnt in a higher postion then checkingCard
+          if (value.indexOf(OHandCards[checkingCard].slice(0, -1)) // divde by 4 and add r so every 4 iratTions checks4,5,6,7 card (0indexed)
+            < value.indexOf(OHandCards[targetCard].slice(0, -1))) {
+            OHandCards.unshift(OHandCards.splice(checkingCard, 1)[0]);
+            checkingCard = 0;
+            //console.log(OHandCards);
+            break;
+          } else {}
+        }
+      }
+      let bestCard = [OHandCards.shift(), OHandCards.shift(),
         OHandCards.shift(), OHandCards.shift()
       ];
       OFC1.src = card(bestCard[0]); // placing for botoms 
@@ -138,15 +131,43 @@ let bestCard = [OHandCards.shift(), OHandCards.shift(),
       for (let i = 0; i < 4; i++) {
         Ybottoms[i] = deck.shift(); // oponent picking from deck
       }
-      YFC1.src = card(YHandCards.shift());
-      YFC2.src = card(YHandCards.shift());
-      YFC3.src = card(YHandCards.shift());
-      YFC4.src = card(YHandCards.shift());
-      YHC1.src = card(YHandCards.shift());
-      YHC2.src = card(YHandCards.shift());
-      YHC3.src = card(YHandCards.shift());
-      YHC4.src = card(YHandCards.shift());
+
+      function sortYhand() {
+        for (let checkingCard = 0; checkingCard < YHandCards.length; checkingCard++) { // the card im seeeing should be placed b/f the target card
+          for (let targetCard = 0; targetCard < checkingCard; targetCard++) { //the card. that im making sure isnt in a higher postion then checkingCard
+            if (value.indexOf(YHandCards[checkingCard].slice(0, -1)) // divde by 4 and add r so every 4 iratTions checks4,5,6,7 card (0indexed)
+              < value.indexOf(YHandCards[targetCard].slice(0, -1))) {
+              YHandCards.unshift(YHandCards.splice(checkingCard, 1)[0]);
+              checkingCard = 0;
+              //console.log(YHandCards);
+              break;
+            }
+          }
+        }
+        YHC4.src = card(YHandCards[0]);
+        YHC1.src = card(YHandCards[1]);
+        YHC2.src = card(YHandCards[2]);
+        YHC3.src = card(YHandCards[3]);
+      }
+      sortYhand();
+      YFC1.src = card(YHandCards[0]); //these 8 lines overide what sortYhand bec this is 
+      YFC2.src = card(YHandCards[1]); // is just for begging of game
+      YFC3.src = card(YHandCards[2]);
+      YFC4.src = card(YHandCards[3]);
+      YHC1.src = card(YHandCards[4]);
+      YHC2.src = card(YHandCards[5]);
+      YHC3.src = card(YHandCards[6]);
+      YHC4.src = card(YHandCards[7]);
+      let cardToSwap;// keeping track of the lsected card when picking the bottms
+      function swap(event){
+          cardToSwap = event.target.id;
+          console.log(cardToSwap);
+          
+          
+      }
+      YC.forEach((clickedCard) => {
+          clickedCard.addEventListener("click",swap);
+      })
     </script>
   </body>
-
 </html>
